@@ -14,6 +14,21 @@ def profile():
     return render_template("profile.html")
 
 
+@app.route("/addrecipe")
+def addrecipe():
+    return render_template("addrecipe.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
