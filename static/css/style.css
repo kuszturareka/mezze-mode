@@ -1,0 +1,69 @@
+.main-font {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    margin: 20px 0px;
+    height: 100%;
+    position: relative;
+    border: 1px solid #FFFFFF;
+  }
+  
+  .card-control {
+    margin-bottom: 50px;
+    margin-top: 10px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card-title {
+    height: 3rem;
+    color: #1B3122;
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .card h5 {
+    border-bottom: 1px solid #000000;
+  }
+  
+  .index-profile-img {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-text {
+    font-size: 1.25rem;
+    height: 80%;
+    flex-wrap: wrap;
+  }
+  
+  .recipe-btn-div {
+    text-align: center;
+    font: Roboto;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-btn-div .btn {
+    height: 40px;
+    padding: 10px;
+    margin: auto 0;
+    border-radius: 10px;
+  }
+
+  .shadow-effect {
+    box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.24);
+  }
+
