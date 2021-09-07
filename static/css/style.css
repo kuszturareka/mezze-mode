@@ -10,7 +10,8 @@
     margin: 20px 0px;
     height: 100%;
     position: relative;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
   }
   
   .card-control {
@@ -25,13 +26,13 @@
   
   .card-title {
     height: 3rem;
-    color: #1B3122;
+    color: #2f2f2f;
     font-size: 1rem;
     padding: 1rem 0;
   }
   
   .card h5 {
-    border-bottom: 1px solid #000000;
+    border-bottom: 2px solid #c0c0c0;
   }
   
   .index-profile-img {
@@ -60,10 +61,10 @@
     height: 40px;
     padding: 10px;
     margin: auto 0;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 
   .shadow-effect {
-    box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.24);
+    box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.15);
   }
 
