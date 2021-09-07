@@ -1,5 +1,7 @@
 import os
-from flask import (Flask, render_template)
+from flask import (
+    Flask, flash, render_template, 
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -12,28 +14,13 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-
-MONGO_URI = os.environ.get("MONGO_URI")
-DATABASE = "firstDB"
-COLLECTION = "recipes"
-
-
-def mongo_connect(url):
-    try:
-        conn = pymongo.MongoClient(url)
-        return conn
-    except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to MongoDB: %s") % e
-
-
-conn = mongo_connect(MONGO_URI)
-
-coll = conn[DATABASE][COLLECTION]
+mongo = PyMongo(app)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    recipes = mongo.db.recipes.find()
+    return render_template("index.html", recipes=recipes)
 
 
 @app.route("/profile")
@@ -49,6 +36,11 @@ def addrecipe():
 @app.route("/login")
 def login():
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
 
 
 @app.route("/register")
