@@ -88,4 +88,50 @@ b) Install the necessary module in the CLI:
 
     pip install -r requirements.txt.
 
-c)
+c) Within your local IDE you must create a file named .flaskenv.
+
+
+d) Within the .flaskenv file, you must create a SECRET_KEY variable and a MONGO_URI to link to your own database. Please make sure to call your database goodfoodmood, with 2 collections named users and recipes.
+
+e) If using VSCode you must create a folder named .vscode and a file named settings.json inside then add the below:
+
+    "terminal.integrated.env.windows": {
+    "SECRET_KEY": "",
+    "DEV": "1",
+    "HOSTNAME": "0.0.0.0",
+    "PORT": "5000",
+    "MONGO_URI": "[Database uri here]",
+    } 
+
+f) You may now run the application with the command line:
+
+    python app.py
+
+### Heroku Deployment
+
+To deploy your website to Heroku, you should follow the instructions set out below:
+
+1. Create a requirements.txt file with the command line:
+
+        pip3 freeze –local > requirements.txt
+
+2. You now need to create a Procfile by typing the command line:
+
+        echo web: python app.py > Procfile
+
+3. One the Procfile has been created, access the file and delete the empty line at the bottom and save the file to avoid issues.
+
+4. Proceed to the Heroku website where you should log in and click "New" then "Create new app" and then proceed to selecting the closest region to you.
+
+5. Proceed to the "Deploy" nav link at the top, then to "Deploy method". Once found, select the github button. Link to GitHub by entering your website repo name and clicking search and connect.
+
+6. Click "Settings" on the top navbar and scroll to "Config Vars" then click the "Reveal Config Vars" button.
+
+7. Copy the key, value pairs from your IDE env file and enter into the fields provided on Heroku.
+
+8. Proceed back to your terminal and add and commit the requirements.txt file and push to GitHub.
+
+9. Once these steps are completed, go back to Heroku and click "Deploy" and scroll down to "Automatic deploys" section then proceed and click "Enable Automatic Deploys". 
+
+10. You should then recieve a message stating that your app has been succesfully deployed.
+
