@@ -32,8 +32,29 @@ def addrecipe():
     return render_template("addrecipe.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
+
+    if request.method == "POST":
+        user = mongo.db.users
+        current_user = user.find.one(
+            {"username": request.form.get("username").lower()})
+        if current_user:
+            if check_password_hash(
+                current_user["password"],
+                request.form.get("password")):
+                session["username"] = request.form.get("username").lower()
+                return redirect(url_for("profile",
+                    username = session["username"]))
+
+            else:
+                flash("You have entered a wrong username/password")
+                return redirect(url_for("login"))
+
+        else:
+            flash("You have entered the wrong username/password")
+            return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
@@ -56,11 +77,11 @@ def register():
             flash("Sorry, the username you have selected already exists",
                   category="error")
             return redirect(url_for("register"))
-        elif len(username) < 6:
+        elif len(username) > 6:
             flash("Your username must be longer than 6 characters",
                   category="error")
             return redirect(url_for("register"))
-        elif len(password) < 7:
+        elif len(password) > 7:
             flash("Your password must be be longer than 7 characters",
                   category="error"),
             return redirect(url_for("register"))
@@ -73,12 +94,12 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(password, method="sha256")
         }
-        user.insert_one(register)
+        users.insert_one(register)
 
         session["username"] = request.form.get("username").lower()
         flash("Hooray! You are now successfully registered",
               category="success")
-        return redirect(url_for("profile", username=session["username"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
