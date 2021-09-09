@@ -70,16 +70,13 @@
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ notification }}
                         <button type="button" class="close" data-bs-dismiss="alert">
-                            <span class="close-alert" aria-hidden="true">&times;</span>
+                            <span class="close-alert" aria-hidden="true"></span>
                         </button>
                     </div>
                     {% endif %}
                     {% endfor %}
                     {% endif %}
                     {% endwith %}
-                    <!-- block content that will apear over the background image -->
-                    {% block text_main_image %}
-                    {% endblock %}
                     </div>
                 </div>
             </div>
@@ -101,7 +98,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="https://twitter.com/">
+                                <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
@@ -109,7 +106,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.facebook.com/">
+                                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -117,7 +114,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/">
+                                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
