@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">MezzeMode</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">MezzeMode</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -24,21 +24,25 @@
                     <li class="nav-item">
 						<a class="nav-link" href="{{ url_for('index') }}">Home</a>
 					</li>
+                    {% if session.username %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('addrecipe') }}">Add Recipe</a>
 					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+					</li>
+                    {% else %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('login') }}">Log In</a>
 					</li>
                     <li class="nav-item">
-						<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
-					</li>
-                    <li class="nav-item">
 						<a class="nav-link" href="{{ url_for('register') }}">Register</a>
 					</li>
+                    {% endif %}
+
                 </ul>
             </div>
         </div>
@@ -51,17 +55,44 @@
                     <div class="site-heading">
                         <h1>MezzeMode</h1>
                         <span class="subheading">Mediterranean Recipes</span>
+                        <!-- Flashed message -->
+                    {% with notifications = get_flashed_messages(with_categories=true) %}
+                    {% if notifications %}
+                    {% for category, notification in notifications %}
+                    {% if category == "error" %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ notification }}
+                        <button type="button" class="close" data-bs-dismiss="alert">
+                            <span class="close-alert" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ notification }}
+                        <button type="button" class="close" data-bs-dismiss="alert">
+                            <span class="close-alert" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <!-- block content that will apear over the background image -->
+                    {% block text_main_image %}
+                    {% endblock %}
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
+    <div>
+        <div class="container px-4 px-lg-5">
 
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
 
+        </div>
     </div>
     <!-- Footer-->
     <footer class="border-top">
