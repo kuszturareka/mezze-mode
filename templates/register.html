@@ -1,45 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="registration">
+<div class="registration" method="POST" action="{{ url_for('register') }}">
     <section class="vh-100 bg-image" >
-        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="card" style="border-radius: 15px;">
                 <div class="card-body p-5">
                     <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-    
+
                     <form>
-    
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example1cg">Username</label>
-                        <i class="fas fa-user form-icon"></i>
-                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                        
-                        
-                    </div>
-    
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example4cg">Password</label>
-                        <i class="fas fa-lock form-icon"></i>
-                        <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                        
-                    </div>
-    
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example4cdg">Confirm Password</label>
-                        <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                    </div>
-    
-                    <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                    </div>
-    
-                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{{ url_for('login') }}" class="fw-bold text-body"><u>Login here</u></a></p>
-    
+                        <!-- username -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label main-font" for="form3Example1cg">Username</label>
+                            <i class="fas fa-user form-icon"></i>
+                            <input type="text" name="username" class="form-control" id="username" minlength="5" maxlength="30"
+                                pattern="[-a-zA-Z0-9@\._]{5,30}"
+                                title="Only include Letters/Numbers and Symbols @\._ and no spaces allowed!" required>  
+                        </div>
+                        <!-- password -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label main-font" for="form3Example4cg">Password</label>
+                            <i class="fas fa-lock form-icon"></i>
+                            <input type="password" name="password" class="form-control" id="password" minlength="7" 
+                                maxlength="20" required>
+                        </div>
+                        <!-- confirm passwrod -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label main-font" for="form3Example4cdg">Confirm Password</label>
+                            <input type="password" name="confirm_password" class="form-control" id="confirm_password"
+                                 minlength="7" maxlength="20" required>
+                        </div>
+        
+                        <div class="form-button-div">
+                            <!-- Submit button to check if username/passwords is available and then creates a new user on MongoDB -->
+                            <button type="submit" class="btn btn-success main-font main-color form-button shadow-effect">REGISTER</button>
+                        </div>
+        
+                        <p class="text-center text-muted mt-5 mb-0">You already have an account? <a href="{{ url_for('login') }}" class="fw-bold text-body"><u>Login here</u></a></p>
+        
                     </form>
-    
                 </div>
                 </div>
             </div>
