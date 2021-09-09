@@ -60,8 +60,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    session.pop("username")
-    flash("You have been successfully logged out")
+
     return redirect(url_for("index"))
 
 
@@ -75,7 +74,7 @@ def register():
         confirmed_password = request.form.get("confirm_password")
         active_user = user.find_one({"username": username.lower()})
 
-        if existing_user:
+        if active_user:
             flash("Sorry, the username you have selected already exists",
                   category="error")
             return redirect(url_for("register"))
