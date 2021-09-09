@@ -1,10 +1,5 @@
 # MezzeMode
-
-
-
-
-
-
+![mockup](static/assets/img/mockup.png)
 
 ### Table of contents 
 * [UX (User Experience)](#ux--user-experience-)
