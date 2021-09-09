@@ -42,8 +42,9 @@ def logout():
     return render_template("logout.html")
 
 
-@app.route("/register", methods = ["GET", "POST"])
+@app.route("/register", methods=["GET", "POST"])
 def register():
+
     if request.method == "POST":
         user = mongo.db.users
         username = request.form.get("username")
@@ -51,30 +52,35 @@ def register():
         confirmed_password = request.form.get("confirm_password")
         active_user = user.find_one({"username": username.lower()})
 
-    if active_user:
-        flash("Sorry, the username you have selected already exists", category="error")
-        return redirect(url_for("register"))
-    elif len(username) < 6:
-        flash("Your username must be longer than 6 characters", category="error")
-        return redirect(url_for("register"))
-    elif len(password) < 7:
-        flash("Your password must be be longer than 7 characters", category="error"),
-        return redirect(url_for("register"))
-    elif password != confirmed_password:
-        flash("The passwords you have entered do not match", category="error")
-        return redirect(url_for("register"))
-    
-    register = {
-        "username": request.form.get("username").lower(),
-        "password": generate_password_hash(password, method="sha256")
-    }
-    user.insert_one(register)
+        if active_user:
+            flash("Sorry, the username you have selected already exists",
+                  category="error")
+            return redirect(url_for("register"))
+        elif len(username) < 6:
+            flash("Your username must be longer than 6 characters",
+                  category="error")
+            return redirect(url_for("register"))
+        elif len(password) < 7:
+            flash("Your password must be be longer than 7 characters",
+                  category="error"),
+            return redirect(url_for("register"))
+        elif password != confirmed_password:
+            flash("The passwords you have entered do not match",
+                  category="error")
+            return redirect(url_for("register"))
 
-    session["username"] = request.form.get("username").lower()
-    flash("Hooray! You are now successfully registered", category="success")
-    return redirect(url_for("profile", username=session["username"]))
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(password, method="sha256")
+        }
+        user.insert_one(register)
 
-return render_template("register.html")
+        session["username"] = request.form.get("username").lower()
+        flash("Hooray! You are now successfully registered",
+              category="success")
+        return redirect(url_for("profile", username=session["username"]))
+
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
