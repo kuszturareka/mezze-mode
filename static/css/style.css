@@ -3,7 +3,7 @@
 }
 
 .container {
-    margin-top: 50px;
+    margin-top: 25px;
   }
   
   .card {
@@ -29,6 +29,7 @@
     color: #2f2f2f;
     font-size: 1rem;
     padding: 1rem 0;
+    font: Roboto;
   }
   
   .card h5 {
@@ -46,7 +47,7 @@
   }
   
   .card-text {
-    font-size: 1.25rem;
+    font-size: 1rem;
     height: 80%;
     flex-wrap: wrap;
   }
@@ -59,6 +60,7 @@
   
   .recipe-btn-div .btn {
     height: 40px;
+    font: Roboto;
     padding: 10px;
     margin: auto 0;
     border-radius: 5px;
@@ -73,5 +75,28 @@
   margin-top: -75px;
   margin-bottom: 20px;
   color: #2f2f2f;
+  font: Roboto;
+}
+
+.loginform {
+  margin-top: -75px;
+  margin-bottom: 20px;
+  color: #2f2f2f;
+  font: Roboto;
+}
+
+.alert-success,
+.alert-danger {
+    text-align: center;
+}
+
+.alert-dismissible,
+.alert {
+    padding: 1rem 0;
+}
+
+.close-alert {
+    padding-left: 3rem;
+    font-size: 1.7rem;
 }
 
