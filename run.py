@@ -44,7 +44,27 @@ def logout():
 
 @app.route("/register", methods = ["GET", "POST"])
 def register():
-    return render_template("register.html")
+    if request.method == "POST":
+        user = mongo.db.users
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmed_password = request.form.get("confirm_password")
+        active_user = user.find_one({"username": username.lower()})
+
+    if active_user:
+        flash("Sorry, the username you have selected already exists", category="error")
+        return redirect(url_for("register"))
+    elif len(username) < 6:
+        flash("Your username must be longer than 6 characters", category="error")
+        return redirect(url_for("register"))
+    elif len(password) < 7:
+        flash("Your password must be be longer than 7 characters", category="error"),
+        return redirect(url_for("register"))
+    elif password != confirmed_password:
+        flash("The passwords you have entered do not match", category="error")
+        return redirect(url_for("register"))
+    
+
 
 
 if __name__ == "__main__":
