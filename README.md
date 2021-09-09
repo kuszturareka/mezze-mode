@@ -5,17 +5,18 @@
 * [UX (User Experience)](#ux--user-experience-)
     + [User Stories](#user-stories)
     + [User Goals](#user-goals)
-    + [Design](#design) 
-    + [Color Scheme](#color-scheme) 
+* [Design](#design) 
+    + [Color Scheme](#colorscheme) 
     + [Typography](#typography)
 * [Wireframes](#wireframes)    
 * [Features](#features)
    + [Existing Features](#existing-features)
    + [Future Features](#future-features) 
+* [Information Architecture](#information-architecture)
 * [Admin Credentials](#admin-credentials)
 * [Technologies Used](#technologies-used)
    + [Languages Used](#languages-used)
-   + [Frameworks, Libraries and Programs](#frameworks)
+   + [Frameworks](#frameworks)
 * [Testing](#testing)
     + [User Stories Testing]()
     + [Further Testing]()
@@ -23,16 +24,32 @@
 * [Unsolved Bugs]()
 * [Deployment](#deployment)
     + [Instructions](#instructions)
-    + [Heroku Deployment](#heroku-deployment)
+    + [Heroku Deployment](#deployment)
 * [Credits](#credits)
     + [Content]()
     + [Media]()
     + [Aknowledgements]()
- 
+
+## UX
+### User Stories
+### User Goals
 ## Design
 ### Colour Scheme
+![scheme](static/assets/img/scheme.jpg)
+For this particular project, I chose to go with a shade of Hunter Green and Papaya Whip (which both compliment the hero image), Jet (black) and Platinum(white) for the text and Silver for the card edges. 
+
+### Typography
+The font I have used throughout my website is Roboto, with Sans Serif as a fallback.
+
+## Wireframes
+
+## Features
+### Existing features
+### Future features
 
 
+## Information architecture
+## Admin credentials
 
 
 ## Technologies Used 
@@ -45,7 +62,7 @@
 
    [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-### Frameworks, Libraries and Programs
+### Frameworks
 [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
 [Werkzeug](https://flask.palletsprojects.com/en/2.0.x/)
@@ -64,7 +81,12 @@
 
 [Gitpod](https://www.gitpod.io/)
 
+## Testing
+### User stories testing
+### Further testing
 
+## Bugs
+## Unsolved bugs
 ## Deployment
 ### Instructions
 
@@ -130,3 +152,7 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 
 10. You should then recieve a message stating that your app has been succesfully deployed.
 
+## Credits
+### Content
+### Media
+### Aknowledgements
