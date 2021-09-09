@@ -43,9 +43,9 @@ def login():
             if check_password_hash(
                 current_user["password"],
                     request.form.get("password")):
-                    session["username"] = request.form.get("username").lower()
-                    return redirect(url_for("profile",
-                                username = session["username"]))
+                session["username"] = request.form.get("username").lower()
+                return redirect(url_for("profile",
+                                username=session["username"]))
 
             else:
                 flash("You have entered a wrong username/password")
@@ -75,7 +75,7 @@ def register():
         confirmed_password = request.form.get("confirm_password")
         active_user = user.find_one({"username": username.lower()})
 
-        if active_user:
+        if existing_user:
             flash("Sorry, the username you have selected already exists",
                   category="error")
             return redirect(url_for("register"))
@@ -85,7 +85,7 @@ def register():
             return redirect(url_for("register"))
         elif len(password) > 7:
             flash("Your password must be be longer than 7 characters",
-                  category="error"),
+                  category="error")
             return redirect(url_for("register"))
         elif password != confirmed_password:
             flash("The passwords you have entered do not match",
@@ -96,14 +96,30 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(password, method="sha256")
         }
-        users.insert_one(register)
+        user.insert_one(register)
 
         session["username"] = request.form.get("username").lower()
         flash("Hooray! You are now successfully registered",
               category="success")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["username"]))
 
     return render_template("register.html")
+
+
+@app.errorhandler(404)
+def page_not_available(e):
+    """
+    If a 404 error occurs, the user is directed to a custom 404 page.
+    """
+    return render_template('404.html')
+
+
+@app.errorhandler(500)
+def server_error(e):
+    """
+    If a 500 error occurs, the user is directed to a custom 500 page.
+    """
+    return render_template('500.html')
 
 
 if __name__ == "__main__":
