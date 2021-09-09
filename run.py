@@ -64,7 +64,17 @@ def register():
         flash("The passwords you have entered do not match", category="error")
         return redirect(url_for("register"))
     
+    register = {
+        "username": request.form.get("username").lower(),
+        "password": generate_password_hash(password, method="sha256")
+    }
+    user.insert_one(register)
 
+    session["username"] = request.form.get("username").lower()
+    flash("Hooray! You are now successfully registered", category="success")
+    return redirect(url_for("profile", username=session["username"]))
+
+return render_template("register.html")
 
 
 if __name__ == "__main__":
