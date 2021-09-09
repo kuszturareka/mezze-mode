@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, render_template, redirect, request, session, url_for
+from flask import (Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -37,15 +37,15 @@ def login():
 
     if request.method == "POST":
         user = mongo.db.users
-        current_user = user.find.one(
+        current_user = user.find_one(
             {"username": request.form.get("username").lower()})
         if current_user:
             if check_password_hash(
                 current_user["password"],
-                request.form.get("password")):
-                session["username"] = request.form.get("username").lower()
-                return redirect(url_for("profile",
-                    username = session["username"]))
+                    request.form.get("password")):
+                    session["username"] = request.form.get("username").lower()
+                    return redirect(url_for("profile",
+                                username = session["username"]))
 
             else:
                 flash("You have entered a wrong username/password")
@@ -60,7 +60,9 @@ def login():
 
 @app.route("/logout")
 def logout():
-    return render_template("logout.html")
+    session.pop("username")
+    flash("You have been successfully logged out")
+    return redirect(url_for("index"))
 
 
 @app.route("/register", methods=["GET", "POST"])
