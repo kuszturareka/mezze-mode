@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% block text_main_image %}
 <div class="site-heading" id="add-recipe-heading">
-    <h3 class="main-font" id="recipe-heading-text">Add your recipe here: </h3>
-    <!-- Button linked to the addrecipe-form -->
-    <a href="#" class="btn btn-primary main-color main-font" id="add-recipe-button" data-mdb-toggle="modal"
-        data-mdb-target="#form-modal">Add Recipe</a>
+    <h3 class="main-font" id="recipe-heading-text">Click here to add your Recipe</h3>
+    <!-- Button linked to the add-recipe-form -->
+    <a href="#" class="btn btn-primary main-color main-font" id="add-recipe-button">Add Recipe</a>
 </div>
 {% endblock %}
-{% include 'components/addrecipe-form.html' %}
+{% include 'components/add-recipe-form.html' %}
+
 
