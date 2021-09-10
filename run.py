@@ -22,8 +22,38 @@ def index():
     return render_template("index.html", recipes=recipes)
 
 
-@app.route("/addrecipe")
+@app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
+    if request.method == "POST":
+        get_recipe = request.form.get
+        recipe = {
+           "recipe_name": get_recipe("recipe_name"),
+           "image_url": get_recipe("image_url"),
+           "description": get_recipe("description"),
+           "ingredients_1": get_recipe("ingredients_1"),
+           "ingredients_2": get_recipe("ingredients_2"),
+           "ingredients_3": get_recipe("ingredients_3"),
+           "ingredients_4": get_recipe("ingredients_4"),
+           "ingredients_5": get_recipe("ingredients_5"),
+           "ingredients_6": get_recipe("ingredients_6"),
+           "ingredients_7": get_recipe("ingredients_7"),
+           "ingredients_8": get_recipe("ingredients_8"),
+           "step_1": get_recipe("step_1"),
+           "step_2": get_recipe("step_2"),
+           "step_3": get_recipe("step_3"),
+           "step_4": get_recipe("step_4"),
+           "step_5": get_recipe("step_5"),
+           "step_6": get_recipe("step_6"),
+           "step_7": get_recipe("step_7"),
+           "step_8": get_recipe("step_8"),
+           "prep_time": get_recipe("prep_time"),
+           "cook_time": get_recipe("cook_time"),
+           "servings": get_recipe("servings"),
+           "recipe_by": session["username"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("You have succesfully added your recipe!")
+        return redirect(url_for("index"))
     return render_template("addrecipe.html")
 
 
