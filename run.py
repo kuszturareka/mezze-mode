@@ -33,12 +33,10 @@ def login():
     if request.method == "POST":
         user = mongo.db.users
         current_user = user.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username")})
         if current_user:
-            if check_password_hash(
-                current_user["password"],
-                    request.form.get("password")):
-                session["username"] = request.form.get("username").lower()
+            if check_password_hash(current_user["password"], request.form.get("password")):
+                session["username"] = request.form.get("username")
                 return redirect(url_for("profile",
                                 username=session["username"]))
             else:
