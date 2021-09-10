@@ -1,28 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="registration" method="POST" action="{{ url_for('register') }}">
+<div class="registration" method="POST" action="/register">
     <section class="vh-100 bg-image" >
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="card" style="border-radius: 15px;">
                 <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                    <h2 class="text-uppercase">Create an account</h2>
 
-                    <form>
+                    <form method="POST" action="{{ url_for('register') }}">
                         <!-- username -->
                         <div class="form-outline mb-4">
                             <label class="form-label main-font" for="form3Example1cg">Username</label>
                             <i class="fas fa-user form-icon"></i>
                             <input type="text" name="username" class="form-control" id="username" minlength="5" maxlength="30"
-                                pattern="[-a-zA-Z0-9@\._]{5,30}"
-                                title="Only include Letters/Numbers and Symbols @\._ and no spaces allowed!" required>  
+                                required>
                         </div>
                         <!-- password -->
                         <div class="form-outline mb-4">
                             <label class="form-label main-font" for="form3Example4cg">Password</label>
                             <i class="fas fa-lock form-icon"></i>
-                            <input type="password" name="password" class="form-control" id="password" minlength="7" 
+                            <input type="password" name="password" class="form-control" id="password" minlength="6" 
                                 maxlength="20" required>
                         </div>
                         <!-- confirm passwrod -->
