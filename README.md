@@ -86,7 +86,21 @@ The font I have used throughout my website is Roboto, with Sans Serif as a fallb
 ### Further testing
 
 ## Bugs
+1. Upstreaming issue - Git was aware of Github, but not using it after early deployment to Heroku. Pushed information only visile in Heroku.
+Solved with: 
+
+        git config --get remote.origin.url
+		git branch -vv
+		git branch (response * main)
+		git push --set-upstream https://github.com/
+            kuszturareka/mezze-mode.git main
+        git push origin main
+2. Missmatch in Heroku, the website was not functional. Fixed by reinstalling the requirements.txt file.
+
+3. Registration form not importing username and password to MongoDB. Fixed by adding the proper POST method to the form. 
 ## Unsolved bugs
+
+
 ## Deployment
 ### Instructions
 
