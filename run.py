@@ -22,11 +22,6 @@ def index():
     return render_template("index.html", recipes=recipes)
 
 
-@app.route("/profile")
-def profile():
-    return render_template("profile.html")
-
-
 @app.route("/addrecipe")
 def addrecipe():
     return render_template("addrecipe.html")
@@ -46,11 +41,9 @@ def login():
                 session["username"] = request.form.get("username").lower()
                 return redirect(url_for("profile",
                                 username=session["username"]))
-
             else:
                 flash("You have entered a wrong username/password")
                 return redirect(url_for("login"))
-
         else:
             flash("You have entered the wrong username/password")
             return redirect(url_for("login"))
@@ -60,7 +53,8 @@ def login():
 
 @app.route("/logout")
 def logout():
-
+    session.pop("username")
+    flash("You have been successfully logged out")
     return redirect(url_for("index"))
 
 
@@ -78,11 +72,11 @@ def register():
             flash("Sorry, the username you have selected already exists",
                   category="error")
             return redirect(url_for("register"))
-        elif len(username) > 6:
+        elif len(username) < 6:
             flash("Your username must be longer than 6 characters",
                   category="error")
             return redirect(url_for("register"))
-        elif len(password) > 7:
+        elif len(password) < 7:
             flash("Your password must be be longer than 7 characters",
                   category="error")
             return redirect(url_for("register"))
@@ -100,9 +94,14 @@ def register():
         session["username"] = request.form.get("username").lower()
         flash("Hooray! You are now successfully registered",
               category="success")
-        return redirect(url_for("profile", username=session["username"]))
+        return redirect(url_for('profile'))
 
     return render_template("register.html")
+
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
 
 
 @app.errorhandler(404)
