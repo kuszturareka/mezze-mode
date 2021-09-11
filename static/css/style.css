@@ -4,79 +4,78 @@
 
 .container {
     margin-top: 25px;
-  }
+}
   
-  .card {
-    margin: 20px 0px;
-    height: 100%;
-    position: relative;
-    border: 1px solid #e8e8e8;
-    border-radius: 10px;
-  }
+.card {
+  margin: 20px 0px;
+  height: 100%;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+}
   
-  .card-control {
-    margin-bottom: 50px;
-    margin-top: 10px;
-  }
+.card-control {
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
   
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
   
-  .card-title {
-    height: 3rem;
-    color: #2f2f2f;
-    font-size: 1rem;
-    padding: 1rem 0;
-    font: Roboto;
-  }
+.card-title {
+  height: 3rem;
+  color: #2f2f2f;
+  font-size: 1rem;
+  padding: 1rem 0;
+  font: Roboto;
+}
   
-  .card h5 {
-    border-bottom: 2px solid #c0c0c0;
-  }
+.card h5 {
+  border-bottom: 2px solid #c0c0c0;
+}
   
-  .index-profile-img {
-    width: 100%;
-    height: 20vw;
-    object-fit: cover;
-  }
+.index-profile-img {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
   
-  .card-body {
-    text-align: center;
-  }
+.card-body {
+  text-align: center;
+}
   
-  .card-text {
-    font-size: 1rem;
-    height: 80%;
-    flex-wrap: wrap;
-  }
+.card-text {
+  font-size: 1rem;
+  height: 80%;
+  flex-wrap: wrap;
+}
   
-  .recipe-btn-div {
-    text-align: center;
-    font: Roboto;
-    margin-bottom: 20px;
-  }
+.recipe-btn-div {
+  text-align: center;
+  font: Roboto;
+  margin-bottom: 20px;
+}
   
-  .recipe-btn-div .btn {
-    height: 40px;
-    font: Roboto;
-    padding: 10px;
-    margin: auto 0;
-    border-radius: 5px;
-  }
+.recipe-btn-div .btn {
+  height: 40px;
+  font: Roboto;
+  padding: 10px;
+  margin: auto 0;
+  border-radius: 5px;
+}
 
-  .shadow-effect {
-    box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.15);
-  }
+.shadow-effect {
+  box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.15);
+}
 
-
-  .registration {
-    margin-top: -75px;
-    margin-bottom: 20px;
-    color: #2f2f2f;
-    font: Roboto;
-  }
+.registration {
+  margin-top: -75px;
+  margin-bottom: 20px;
+  color: #2f2f2f;
+  font: Roboto;
+}
 
 .loginform {
   margin-top: -75px;
@@ -98,6 +97,7 @@
   border-radius: 5px;
   font: Roboto;
   margin: 10px;
+  text-align: center;
 }
 
 .recipe-form-subheading {
@@ -109,25 +109,6 @@
   font-size: 25px;
   color: #2f2f2f;
   text-align: center;
-}
-
-.alert-success,
-.alert-danger {
-    text-align: center;
-    color: #e8e8e8 ;
-    border: none;
-}
-
-.alert-dismissible,
-.alert {
-    padding: 0px;
-    border-radius: 15px;
-    background-color: transparent;
-}
-
-.close-alert {
-   color: transparent;
-    
 }
 
 .form-group{
@@ -179,7 +160,7 @@
   background-color: darkgreen;
   color: #e8e8e8;
   margin: 5px;
-  text-align: center; !important;
+  text-align: center;
   border-radius: 5px;
 }
 
@@ -187,4 +168,22 @@
   font: Roboto;
   text-align: center;
   font-size: 15px;
+}
+
+.alert-success,
+.alert-danger {
+  text-align: center;
+  color: #e8e8e8;
+  border: none;
+}
+
+.alert-dismissible,
+.alert {
+  background-color: transparent!important;
+}
+
+.close-alert {
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
 }
