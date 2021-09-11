@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <form aria-labelledby="add-recipe-form-title" aria-hidden="true"
     method="POST" action="{{ url_for('addrecipe') }}">
     <div>
@@ -5,13 +7,11 @@
             <div>
                 <!-- Form Title-->
                 <h5 id="add-recipe-form-title">Add your Recipe</h5>
-                <!-- Button to close the addrecipe-form -->
-                <button type="button" class="btn-close" aria-label="Close"></button>
             </div>
             <div class="recipe-body">
                 <div class="add-recipe-form-div">
                     <!-- Labels and inputs for adding a Recipe -->
-                    <p class="recipe-form-subheading main-font">Recipe info</p>
+                    <p class="recipe-form-subheading">Recipe Information</p>
                     <label for="recipe_name" class="addrecipe-form-label main-font">Recipe Name</label>
                     <input type="text" name="recipe_name" class="form-control" id="recipe_name" required>
                     <label for="image_url" class="addrecipe-form-label main-font">Image website link</label>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="add-recipe-form-div">
                     <!-- Labels and inputs for adding additional Recipe information -->
-                    <p class="recipe-form-subheading main-font">Cooking/Prep Info</p>
+                    <p class="recipe-form-subheading main-font">Cooking and Preparation Info</p>
                     <label for="prep_time" class="addrecipe-form-label main-font">Preparation Time</label>
                     <input type="text" name="prep_time" class="form-control" id="prep_time" required>
                     <label for="cook_time" class="addrecipe-form-label main-font">Cooking Time</label>
@@ -72,9 +72,10 @@
             </div>
             <div>
                 <!-- Button that submits new recipe document to MongoDB -->
-                <button type="submit" class="btn main-font main-color add-modal-button shadow-effect">Add
+                <button type="submit" class="addbutton text-center">Add
                     Recipe</button>
             </div>
         </div>
     </div>
 </form>
+{% endblock %}
