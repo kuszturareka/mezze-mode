@@ -75,6 +75,7 @@ The font I have used throughout my website is Roboto, with Sans Serif as a fallb
 * Adding the possibility of resetting the password.
 * Adding email as an option for username.
 * Promote a brand of kitchen utensils. 
+* Different sections for food types.
 
 ## Information architecture
 
@@ -122,10 +123,10 @@ Recipe Data
 
 ## Testing
 
-    W3C Markup Validator - 
-    Jigsaw CSS Validator - 
-    JSHint - 
-    PEP8 - 
+    W3C Markup Validator - validated and passed;
+    Jigsaw CSS Validator - validated and passed;
+    JSHint - validated and passed;
+    PEP8 - compliant.
 ### User stories testing
 #### User goals: 
 1.  easily find recipes of my liking :
