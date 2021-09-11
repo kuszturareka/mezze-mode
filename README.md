@@ -1,5 +1,11 @@
 # MezzeMode
-![mockup](static/assets/img/mockup.png)
+![mockup](static/img/mockup.png)
+
+For my third milestone project, I have decided to create a cooking website. To break it down a little bit, the site contains recipes from the well know Mediterranean diet. 
+
+This diet incorporates the traditional healthy living habits of people from countries bordering the Mediterranean Sea.
+
+Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seeds, herbs and spices, are the foundation of this particular diet and olive oil is the main source of added fat. Fish, seafood, dairy and poultry are also included, but in moderation. 
 
 ### Table of contents 
 * [UX (User Experience)](#ux--user-experience-)
@@ -32,10 +38,25 @@
 
 ## UX
 ### User Stories
+1. 
 ### User Goals
+As a user, I would like to :
+* easily find recipes of my liking 
+* have the possibility of creating my own profile
+* add recipes that do not appear on the website
+* update my personal recipes
+* delete my personal recipes
+
+### User Requirements and Expectations
+* intuitive layout
+* user friendly
+* easy to use 
+* accessible on multiple devices, such as laptops, tablets and phones
+
+
 ## Design
 ### Colour Scheme
-![scheme](static/assets/img/scheme.jpg)
+![scheme](static/img/scheme.jpg)
 For this particular project, I chose to go with a shade of Hunter Green and Papaya Whip (which both compliment the hero image), Jet (black) and Platinum(white) for the text and Silver for the card edges. 
 
 ### Typography
@@ -99,15 +120,14 @@ Solved with:
 
 3. Registration form not importing username and password to MongoDB. Fixed by adding the proper POST method to the form. 
 ## Unsolved bugs
-
-
+* Register account form that overlaps with the hero image in mobile view.  
 ## Deployment
 ### Instructions
 
-The followings must be installed :
+The following must be installed :
 
     1. PIP
-    2. Python 3.7
+    2. Python 3.6 or a newer version
     3. Git ()
     4. MongoDB
 
@@ -150,7 +170,7 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 
         echo web: python app.py > Procfile
 
-3. One the Procfile has been created, access the file and delete the empty line at the bottom and save the file to avoid issues.
+3. Once the Procfile has been created, access the file and delete the empty line at the bottom and save the file to avoid issues.
 
 4. Proceed to the Heroku website where you should log in and click "New" then "Create new app" and then proceed to selecting the closest region to you.
 
@@ -167,6 +187,21 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 10. You should then recieve a message stating that your app has been succesfully deployed.
 
 ## Credits
+
+### Code
+
+* Code snippets were taken from Bootstrap and MDB for the creation of the cards, login and registration forms. 
+* Credit for code also goes to my mentor, Richard Wells, who helped me enormously with the project and whose Milestone Project 3 was an inspiration. 
+* The structure of the website was created using the Clean Blog theme.  
+
 ### Content
+* The entirety of the information for the fantastic recipes was taken from [The Mediterranean Dish](https://www.themediterraneandish.com/) website.
 ### Media
+ * The hero image was obtained from [The Honey Combers](https://thehoneycombers.com/singapore/mediterranean-food-in-singapore/).
+ * The images I have used for the recipe cards found on the main page were obtained from [The Mediterranean Dish](https://www.themediterraneandish.com/). 
+ * The Favicon was obtained from the [Favicon](https://favicon.io/favicon-generator/) website.
 ### Aknowledgements
+I received inspiration for this project from the Love Sandwiches Project featured at the end of the Python Essentials Module and The Mini Project featured at the end of the Backend Development Module. 
+
+Inpiration for the README.md came from the Markdown Tutorial, Code Institute Solutions/Anna Greaves.
+
