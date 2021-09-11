@@ -127,24 +127,79 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/profile")
-def profile(username):
-    user = mongo.db.users
-    recipes = list(mongo.db.recipes.fins())
-    username = user.find_one({"username": session["username"]})["username"]
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
 
+    user = mongo.db.users
+    recipes = list(mongo.db.recipes.find())
+    username = user.find_one({"username": session["username"]})['username']
+    print("username")
     if session["username"]:
-        return render_template("profile.html", recipes=recipes,
-                                username=username)
+        return render_template("profile.html", recipes=recipes)
     else:
         return redirect(url_for("login"))
+    if session["username"]:
+        return render_template("profile.html", recipes=recipes,
+                               username=username)
+    else:
+        return redirect(url_for("login"))
+
+@app.route("/update<recipe_id>", methods=["GET", "POST"])
+def update_recipe(recipe_id):
+
+    if request.method == "POST":
+        get_recipe = request.form.get
+        new_update = {
+           "recipe_name": get_recipe("recipe_name"),
+           "image_url": get_recipe("image_url"),
+           "description": get_recipe("description"),
+           "dietary_info": get_recipe("dietary_info"),
+           "ingredients_1": get_recipe("ingredients_1"),
+           "ingredients_2": get_recipe("ingredients_2"),
+           "ingredients_3": get_recipe("ingredients_3"),
+           "ingredients_4": get_recipe("ingredients_4"),
+           "ingredients_5": get_recipe("ingredients_5"),
+           "ingredients_6": get_recipe("ingredients_6"),
+           "ingredients_7": get_recipe("ingredients_7"),
+           "ingredients_8": get_recipe("ingredients_8"),
+           "step_1": get_recipe("step_1"),
+           "step_2": get_recipe("step_2"),
+           "step_3": get_recipe("step_3"),
+           "step_4": get_recipe("step_4"),
+           "step_5": get_recipe("step_5"),
+           "step_6": get_recipe("step_6"),
+           "step_7": get_recipe("step_7"),
+           "step_8": get_recipe("step_8"),
+           "prep_time": get_recipe("prep_time"),
+           "cook_time": get_recipe("cook_time"),
+           "servings": get_recipe("servings"),
+           "recipe_by": session["username"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, new_update)
+        flash("Your recipe has been updated successfully")
+        return redirect(url_for("index"))
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("profile.html", recipes=recipes)
+
+
+@app.route("/delete/<recipe_id>")
+def delete(recipe_id):
+    """
+    Allows user to delete recipes. The selected recipe is captured by it's id
+    and the deleted. The user is then returned to the homepage and flashed a
+    message to let them know the recipe has been successfully deleted"
+    """
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Your recipe has been succesfully deleted!")
+    return redirect(url_for("index"))
+
 
 @app.errorhandler(404)
 def page_not_available(e):
     """
     If a 404 error occurs, the user is directed to a custom 404 page.
     """
-    return render_template('404.html')
+    return render_template("404.html")
 
 
 @app.errorhandler(500)
@@ -152,7 +207,7 @@ def server_error(e):
     """
     If a 500 error occurs, the user is directed to a custom 500 page.
     """
-    return render_template('500.html')
+    return render_template("500.html")
 
 
 if __name__ == "__main__":
