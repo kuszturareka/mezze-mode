@@ -1,5 +1,5 @@
 # MezzeMode
-![mockup](static/img/mockup.png)
+![mockup](static/assets/img/mockup.png)
 
 For my third milestone project, I have decided to create a cooking website. To break it down a little bit, the site contains recipes from the well know Mediterranean diet. 
 
@@ -37,7 +37,7 @@ Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seed
     + [Aknowledgements]()
 
 ## UX
-****
+
 ### User Stories
 1. 
 ### User Goals
@@ -56,19 +56,19 @@ As a user, I would like to :
 
 
 ## Design
-****
+
 ### Colour Scheme
-![scheme](static/img/scheme.jpg)
+![scheme](static/assets/img/scheme.jpg)
 For this particular project, I chose to go with a shade of Hunter Green and Papaya Whip (which both compliment the hero image), Jet (black) and Platinum(white) for the text and Silver for the card edges. 
 
 ### Typography
 The font I have used throughout my website is Roboto, with Sans Serif as a fallback.
 
 ## Wireframes
-****
+
 
 ## Features
-****
+
 ### Existing features
 
 ### Future features
@@ -77,20 +77,20 @@ The font I have used throughout my website is Roboto, with Sans Serif as a fallb
 * Promote a brand of kitchen utensils. 
 
 ## Information architecture
-****
+
 User Data
 
-![users](static/img/Users.png)
+![users](static/assets/img/users.jpg)
 
 Recipe Data
 
-![recipes](static/img/Recipe.jpg)
+![recipes](static/assets/img/recipe.jpg)
 ## Admin credentials
-****
+
 
 
 ## Technologies Used 
-****
+
 ### Languages Used
 
    * [HTML](https://en.wikipedia.org/wiki/HTML)
@@ -121,7 +121,7 @@ Recipe Data
 * [Gitpod](https://www.gitpod.io/)
 
 ## Testing
-****
+
     W3C Markup Validator - 
     Jigsaw CSS Validator - 
     JSHint - 
@@ -142,7 +142,7 @@ Recipe Data
 ### Further testing
  * Website was tested on Chrome, Opera, P30 Pro and Samsung S21 Ultra, with no issues. While testing on  Huawei P20 Pro, the card images were not loading. 
 ## Bugs
-****
+
 1. Upstreaming issue - Git was aware of Github, but not using it after early deployment to Heroku. Pushed information only visile in Heroku.
 Solved with: 
 
@@ -156,10 +156,10 @@ Solved with:
 
 3. Registration form not importing username and password to MongoDB. Fixed by adding the proper POST method to the form. 
 ## Unsolved bugs
-****
+
 * Register account form that overlaps with the hero image in mobile view and sometimes in tablet view.
 ## Deployment
-****
+
 ### Instructions
 
 The following must be installed :
@@ -225,7 +225,7 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 10. You should then recieve a message stating that your app has been succesfully deployed.
 
 ## Credits
-****
+
 
 ### Code
 
