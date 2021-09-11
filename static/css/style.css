@@ -71,12 +71,12 @@
   }
 
 
-.registration {
-  margin-top: -75px;
-  margin-bottom: 20px;
-  color: #2f2f2f;
-  font: Roboto;
-}
+  .registration {
+    margin-top: -75px;
+    margin-bottom: 20px;
+    color: #2f2f2f;
+    font: Roboto;
+  }
 
 .loginform {
   margin-top: -75px;
@@ -85,18 +85,24 @@
   font: Roboto;
 }
 
-.alert-success,
-.alert-danger {
-    text-align: center;
+.recipe-body {
+  font: Roboto, sans serif;
+  color: #2f2f2f;
+  text-align: center;
 }
 
-.alert-dismissible,
-.alert {
-    padding: 1rem 0;
+.addbutton {
+  text-align: center !important;
+  background-color: green ;
+  color: #e8e8e8;
+  border-radius: 5px;
+  font: Roboto;
+  margin: 10px;
 }
 
-.close-alert {
-    padding-left: 3rem;
-    font-size: 1.7rem;
+.recipe-form-subheading {
+  color: #2f2f2f ;
+  font-size: 35px;
 }
 
+.add-recipe-form-title
