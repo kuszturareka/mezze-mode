@@ -1,4 +1,30 @@
 {% extends "base.html" %}
+
+<div class="site-heading">
+    <h1 class="main-font">Welcome to your profile {{ username }}</h1>
+</div>
+
 {% block content %}
-    <h1>Profile</h1>
+<div class="update-container">
+    <div class="row">
+        {% for users_recipe in recipes %}
+        {% if session.username|lower == users_recipe.recipe_by|lower or session.username|lower == "admin"|lower %}
+        <div class="card-control col-12 col-md-4" id="profile-card">
+            <div class="card shadow-effect">
+                <h5 class="card-title text-center main-font secondary-color">{{ users_recipe.recipe_name }}</h5>
+                <img src="{{ users_recipe.image_url }}" class="card-img-top index-profile-img" alt="{{ users_recipe.recipe_name }}">
+                <div class="profile-button-container">
+                    <div class="profile-button-div">
+                        {% include 'components/update.html' %}
+                    </div>
+                    <div class="profile-button-div">
+                        {% include 'components/delete.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
