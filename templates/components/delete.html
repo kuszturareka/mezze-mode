@@ -1,0 +1,16 @@
+
+<div id="confirm-delete" tabindex="-1" aria-labelledby="confirm-delete-title" aria-hidden="true">
+    <div>
+        <div class="content">
+            <div class="body main-font">
+                <!-- Warning the user -->
+                <p id="confirm-delete-body">If you delete your Recipe you will not be able to retrieve it!</p>
+            </div>
+            <!-- Button to delete the Recipe record from MongoDB -->
+            <div id="confirm-delete-div">
+                <a href="{{ url_for('delete', recipe_id=users_recipe._id) }}" type="submit"
+                    class="btn shadow-effect main-font" id="confirm-delete-button">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
