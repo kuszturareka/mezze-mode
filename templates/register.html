@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="registration" method="POST" action="/register">
+<div class="registration">
     <section class="vh-100 bg-image" >
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -30,12 +30,10 @@
                             <input type="password" name="confirm_password" class="form-control" id="confirm_password"
                                  minlength="7" maxlength="20" required>
                         </div>
-        
                         <div class="form-button-div">
                             <!-- Submit button to check if username/passwords is available and then creates a new user on MongoDB -->
                             <button type="submit" class="btn btn-success main-font main-color form-button shadow-effect">REGISTER</button>
                         </div>
-        
                         <p class="text-center text-muted mt-5 mb-0">You already have an account? <a href="{{ url_for('login') }}" class="fw-bold text-body"><u>Login here</u></a></p>
         
                     </form>
@@ -44,7 +42,7 @@
             </div>
             </div>
         </div>
-        </div>
     </section>
 </div>
+
 {% endblock %}
