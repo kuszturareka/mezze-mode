@@ -37,6 +37,7 @@ Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seed
     + [Aknowledgements]()
 
 ## UX
+****
 ### User Stories
 1. 
 ### User Goals
@@ -55,6 +56,7 @@ As a user, I would like to :
 
 
 ## Design
+****
 ### Colour Scheme
 ![scheme](static/img/scheme.jpg)
 For this particular project, I chose to go with a shade of Hunter Green and Papaya Whip (which both compliment the hero image), Jet (black) and Platinum(white) for the text and Silver for the card edges. 
@@ -63,50 +65,84 @@ For this particular project, I chose to go with a shade of Hunter Green and Papa
 The font I have used throughout my website is Roboto, with Sans Serif as a fallback.
 
 ## Wireframes
+****
 
 ## Features
+****
 ### Existing features
-### Future features
 
+### Future features
+* Adding the possibility of resetting the password.
+* Adding email as an option for username.
+* Promote a brand of kitchen utensils. 
 
 ## Information architecture
+****
+User Data
+
+![users](static/img/Users.png)
+
+Recipe Data
+
+![recipes](static/img/Recipe.jpg)
 ## Admin credentials
+****
 
 
 ## Technologies Used 
+****
 ### Languages Used
-   [HTML](https://en.wikipedia.org/wiki/HTML)
 
-   [CSS](https://en.wikipedia.org/wiki/CSS)
+   * [HTML](https://en.wikipedia.org/wiki/HTML)
 
-   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+   * [CSS](https://en.wikipedia.org/wiki/CSS)
 
-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+   * [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+
+   * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Frameworks
-[Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
-[Werkzeug](https://flask.palletsprojects.com/en/2.0.x/)
+* [Werkzeug](https://flask.palletsprojects.com/en/2.0.x/)
 
-[Jinja](https://flask.palletsprojects.com/en/2.0.x/)
+* [Jinja](https://flask.palletsprojects.com/en/2.0.x/)
 
-[Favicon](https://en.wikipedia.org/wiki/Favicon)
+* [Favicon](https://en.wikipedia.org/wiki/Favicon)
 
-[MDB Bootstrap](https://mdbootstrap.com/)
+* [MDB Bootstrap](https://mdbootstrap.com/)
 
-[MongoDB](https://www.mongodb.com/cloud/atlas/register)
+* [MongoDB](https://www.mongodb.com/cloud/atlas/register)
 
-[Start Bootstrap](https://startbootstrap.com/)
+* [Start Bootstrap](https://startbootstrap.com/)
 
-[GitHub](https://github.com/)
+* [GitHub](https://github.com/)
 
-[Gitpod](https://www.gitpod.io/)
+* [Gitpod](https://www.gitpod.io/)
 
 ## Testing
+****
+    W3C Markup Validator - 
+    Jigsaw CSS Validator - 
+    JSHint - 
+    PEP8 - 
 ### User stories testing
-### Further testing
+#### User goals: 
+1.  easily find recipes of my liking :
+    * the site has been created in such way that the users only have to access the site and they will have the information displayed on the front page
 
+* have the possibility of creating their own profile
+    * the users have the possibility of creating an account through the Register option found in the Navbar; if they already have an account, they will be promted to log in (direct link from the registration form to the login page) 
+* add recipes that do not appear on the website
+    * after the users have succesfully registered or logged in, they can add a new recipe through the Add Recipe button found in the Navbar.
+* update personal recipes
+    * the users can later update their recipes from their personal profile
+* delete personal recipes
+    * the users can later update their recipes from their personal profile
+### Further testing
+ * Website was tested on Chrome, Opera, P30 Pro and Samsung S21 Ultra, with no issues. While testing on  Huawei P20 Pro, the card images were not loading. 
 ## Bugs
+****
 1. Upstreaming issue - Git was aware of Github, but not using it after early deployment to Heroku. Pushed information only visile in Heroku.
 Solved with: 
 
@@ -120,8 +156,10 @@ Solved with:
 
 3. Registration form not importing username and password to MongoDB. Fixed by adding the proper POST method to the form. 
 ## Unsolved bugs
-* Register account form that overlaps with the hero image in mobile view.  
+****
+* Register account form that overlaps with the hero image in mobile view and sometimes in tablet view.
 ## Deployment
+****
 ### Instructions
 
 The following must be installed :
@@ -187,6 +225,7 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 10. You should then recieve a message stating that your app has been succesfully deployed.
 
 ## Credits
+****
 
 ### Code
 
