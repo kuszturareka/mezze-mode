@@ -89,6 +89,9 @@
 .btn.btn-success{
   font-size: 17px;
   border-radius: 15px;
+  color:#2f2f2f ;
+  background-color: white;
+  border-color: #2f2f2f;
 }
 
 .recipe-body {
@@ -97,10 +100,9 @@
   text-align: center;
 }
 
-#addbutton {
-  
-  background-color: green ;
-  color: #e8e8e8;
+.addbutton {
+  background-color: white ;
+  color: #2f2f2f;
   border-radius: 5px;
   font: Roboto;
   margin: 10px;
@@ -177,20 +179,34 @@
   font-size: 15px;
 }
 
+#confirm-delete-button{
+  border-radius: 15px;
+}
+
+#btn{
+  border-radius: 15px;
+  size: 20px;
+  color: red;
+}
+
 .alert-success,
 .alert-danger {
   text-align: center;
-  color: #e8e8e8;
+  color: #2f2f2f;
   border: none;
 }
 
 .alert-dismissible,
 .alert {
-  background-color: transparent!important;
+  background-color: peachpuff;
+  opacity: 0.6;
+  border-radius: 15px;
 }
 
-.close-alert {
+.btn.btn-primary{
   background-color: transparent;
-  background-repeat:no-repeat;
-  border: none;
+  border-color: transparent;
+  color: #2f2f2f;
 }
+
+
