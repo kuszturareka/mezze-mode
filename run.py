@@ -128,9 +128,16 @@ def register():
 
 
 @app.route("/profile")
-def profile():
-    return render_template("profile.html")
+def profile(username):
+    user = mongo.db.users
+    recipes = list(mongo.db.recipes.fins())
+    username = user.find_one({"username": session["username"]})["username"]
 
+    if session["username"]:
+        return render_template("profile.html", recipes=recipes,
+                                username=username)
+    else:
+        return redirect(url_for("login"))
 
 @app.errorhandler(404)
 def page_not_available(e):
