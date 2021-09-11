@@ -8,6 +8,7 @@
     <title>Mezze Mode</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" />
     
 
 </head>
@@ -60,19 +61,19 @@
                     {% if notifications %}
                     {% for category, notification in notifications %}
                     {% if category == "error" %}
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ notification }}
-                        <button type="button" class="close" data-bs-dismiss="alert">
-                            <span class="close-alert" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ notification }}
+                            <button type="button" class="close" data-bs-dismiss="alert">
+                                <span class="close-alert" aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     {% else %}
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ notification }}
-                        <button type="button" class="close" data-bs-dismiss="alert">
-                            <span class="close-alert" aria-hidden="true"></span>
-                        </button>
-                    </div>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ notification }}
+                            <button type="button" class="close" data-bs-dismiss="alert">
+                                <span class="close-alert" aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     {% endif %}
                     {% endfor %}
                     {% endif %}
@@ -85,10 +86,8 @@
     <!-- Main Content-->
     <div id="main-content">
         <div class="container px-4 px-lg-5">
-
             {% block content %}
             {% endblock %}
-
         </div>
     </div>
     <!-- Footer-->
@@ -99,26 +98,26 @@
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
                                 <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
                                 <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                                    </span>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
                                 </a>
                             </li>
                         </ul>
@@ -126,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+    </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
