@@ -102,7 +102,27 @@
 
 .recipe-form-subheading {
   color: #2f2f2f ;
-  font-size: 35px;
+  font-size: 30px;
 }
 
-.add-recipe-form-title
+#add-recipe-form-title {
+  font-size: 30px;
+  color: #2f2f2f;
+  text-align: center;
+}
+
+.alert-success,
+.alert-danger {
+    text-align: center;
+    color: #e8e8e8 ;
+    background-color: transparent ;
+}
+
+.alert-dismissible,
+.alert {
+    padding: 20px;
+}
+
+.close-alert {
+    color: #e8e8e8;
+}
