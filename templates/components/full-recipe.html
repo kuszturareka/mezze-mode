@@ -1,82 +1,86 @@
-<form>
-    <div class="form-group">
-      <label class="ingredients">Ingredients</label>
-      <ul class="unordered" style="list-style-type: none;">
-        <li>{{ recipe.ingredients_1 }}</li>
-        <li>{{ recipe.ingredients_2 }}</li>
-        {% if recipe.ingredients_3 %}
-        <li>{{ recipe.ingredients_3 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_4 %}
-        <li>{{ recipe.ingredients_4 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_5 %}
-        <li>{{ recipe.ingredients_5 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_6 %}
-        <li>{{ recipe.ingredients_6 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_7 %}
-        <li>{{ recipe.ingredients_7 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_8 %}
-        <li>{{ recipe.ingredients_8 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_9 %}
-        <li>{{ recipe.ingredients_9 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_10 %}
-        <li>{{ recipe.ingredients_10 }}</li>
-        {% endif %}
-        {% if recipe.ingredients_11 %}
-        <li>{{ recipe.ingredients_11 }}</li>
-        {% endif %}
-    </ul>
+{% block modal %}
+<div class="modal fade colour" id="modal{{recipe._id}}" tabindex="-1" aria-labelledby="fullrecipe"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Recipe name-->
+                <h4 class="modal-title main-font modal-header-text" id="fullrecipe">{{ recipe.recipe_name }}</h4>
+                <!-- Button to close the modal -->
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Image -->
+                <div>
+                    <img class="img-fluid" id="fullrecipe-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                </div>
+                <hr>
+                <div class="main-font modal-body-text">
+                    <h5 class="main-font modal-body-text">Ingredients</h5>
+                    <!-- Ingredient list with if statements. First two ingredients require input, while the others will be ignored if there
+                    is no info-->
+                    <ul>
+                        <li>{{ recipe.ingredients_1 }}</li>
+                        <li>{{ recipe.ingredients_2 }}</li>
+                        {% if recipe.ingredients_3 %}
+                        <li>{{ recipe.ingredients_3 }}</li>
+                        {% endif %}
+                        {% if recipe.ingredients_4 %}
+                        <li>{{ recipe.ingredients_4 }}</li>
+                        {% endif %}
+                        {% if recipe.ingredients_5 %}
+                        <li>{{ recipe.ingredients_5 }}</li>
+                        {% endif %}
+                        {% if recipe.ingredients_6 %}
+                        <li>{{ recipe.ingredients_6 }}</li>
+                        {% endif %}
+                        {% if recipe.ingredients_7 %}
+                        <li>{{ recipe.ingredients_7 }}</li>
+                        {% endif %}
+                        {% if recipe.ingredients_8 %}
+                        <li>{{ recipe.ingredients_8 }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <hr>
+                <div class="main-font modal-body-text">
+                    <h5 class="main-font colour modal-body-text">Directions</h5>
+                    <!-- Directions list. First two require input. -->
+                     <ol>
+                      <li> {{ recipe.step_1 }}</li>
+                      <li> {{ recipe.step_2 }}</li>
+                      {% if recipe.step_3 %}
+                      <li> {{ recipe.step_3 }}</li>
+                      {% endif %}
+                      {% if recipe.step_4 %}
+                      <li> {{ recipe.step_4 }}</li>
+                      {% endif %}
+                      {% if recipe.step_5 %}
+                      <li> {{ recipe.step_5 }}</li>
+                      {% endif %}
+                      {% if recipe.step_6 %}
+                      <li> {{ recipe.step_6 }}</li>
+                      {% endif %}
+                      <li> {{ recipe.step_7 }}</li>
+                      {% if recipe.step_8 %}
+                      <li> {{ recipe.step_8 }}</li>
+                      {% endif %}
+                  </ol>
+                </div>
+                <hr>
+                <div class="main-font modal-body-text">
+                    <!-- Additional info. -->
+                     <ul>
+                      <li>Prep Time: {{ recipe.prep_time }}</li>
+                      {% if recipe.cook_time %}
+                      <li>Cook Time: {{ recipe.cook_time }}</li>
+                      {% endif %}
+                      <li>Servings: {{ recipe.servings }}</li>
+                  </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-      <label class="directions">Directions</label>
-      <ol class="ordered">
-        <li> {{ recipe.step_1 }}</li>
-        <li> {{ recipe.step_2 }}</li>
-        {% if recipe.step_3 %}
-        <li> {{ recipe.step_3 }}</li>
-        {% endif %}
-        {% if recipe.step_4 %}
-        <li> {{ recipe.step_4 }}</li>
-        {% endif %}
-        {% if recipe.step_5 %}
-        <li> {{ recipe.step_5 }}</li>
-        {% endif %}
-        {% if recipe.step_6 %}
-        <li> {{ recipe.step_6 }}</li>
-        {% endif %}
-        <li> {{ recipe.step_7 }}</li>
-        {% if recipe.step_8 %}
-        <li> {{ recipe.step_8 }}</li>
-        {% endif %}
-        {% if recipe.step_9 %}
-        <li> {{ recipe.step_9 }}</li>
-        {% endif %}
-        {% if recipe.step_10 %}
-        <li> {{ recipe.step_10 }}</li>
-        {% endif %}
-        {% if recipe.step_11 %}
-        <li> {{ recipe.step_11 }}</li>
-        {% endif %}
-    </ol>
-    </div>
-    <div class="form-group">
-        <label class="extras">Other info</label>
-        <ul class="unordered" style="list-style-type: none;">
-            <li>Prep Time: {{ recipe.prep_time }}</li>
-            {% if recipe.cook_time %}
-            <li>Cook Time: {{ recipe.cook_time }}</li>
-            {% endif %}
-            <li>Total Time: {{ recipe.total_time }}</li>
-            <li>Servings: {{ recipe.servings }}</li>
-            {% if recipe.cooking_temperature %}
-            <li>Cooking Temperature: {{ recipe.cooking_temperature }}</li>
-            {% endif %}
-        </ul>
-      </div>
-  </form>
+</div>
+{% endblock %}
+
