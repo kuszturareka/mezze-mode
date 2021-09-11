@@ -92,7 +92,7 @@
 }
 
 .addbutton {
-  text-align: center !important;
+  text-align: center;
   background-color: green ;
   color: #e8e8e8;
   border-radius: 5px;
@@ -115,14 +115,43 @@
 .alert-danger {
     text-align: center;
     color: #e8e8e8 ;
-    background-color: transparent ;
+    background-color: green ;
+    border: none;
 }
 
 .alert-dismissible,
 .alert {
-    padding: 20px;
+    padding: 0px;
+    border-radius: 15px;
+    background-color: transparent;
 }
 
 .close-alert {
-    color: #e8e8e8;
+   color: #e8e8e8;
+    
+}
+
+.form-group{
+  font: Roboto;
+  font-size: 15px;
+  color: #2f2f2f;
+}
+
+.ingredients {
+  color:#2f2f2f;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.directions {
+  color:#2f2f2f;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.extras {
+  color:#2f2f2f;
+  font-weight: bold;
+  list-style-type: none; !important
+}
 }
