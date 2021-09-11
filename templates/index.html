@@ -11,8 +11,8 @@
                     <p class="card-text main-font">{{ recipe.description }}</p>
                 </div>
                 <div class="recipe-btn-div">
-                    <a href="#" class="btn btn-success shadow-effect main-font main-color" data-mdb-toggle="modal"
-                        data-mdb-target="#modal{{recipe._id}}">Full Recipe</a>
+                    <a class="btn btn-primary" data-toggle="collapse" href="templates/components/full-recipe.html" role="button">Full Recipe</a>
+                    {% include 'components/full-recipe.html' %}
                 </div>
             </div>
         </div>
