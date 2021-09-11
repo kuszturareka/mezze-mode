@@ -1,7 +1,7 @@
 <form>
     <div class="form-group">
       <label class="ingredients">Ingredients</label>
-      <ul>
+      <ul class="unordered" style="list-style-type: none;">
         <li>{{ recipe.ingredients_1 }}</li>
         <li>{{ recipe.ingredients_2 }}</li>
         {% if recipe.ingredients_3 %}
@@ -22,11 +22,20 @@
         {% if recipe.ingredients_8 %}
         <li>{{ recipe.ingredients_8 }}</li>
         {% endif %}
+        {% if recipe.ingredients_9 %}
+        <li>{{ recipe.ingredients_9 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_10 %}
+        <li>{{ recipe.ingredients_10 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_11 %}
+        <li>{{ recipe.ingredients_11 }}</li>
+        {% endif %}
     </ul>
     </div>
     <div class="form-group">
       <label class="directions">Directions</label>
-      <ol>
+      <ol class="ordered">
         <li> {{ recipe.step_1 }}</li>
         <li> {{ recipe.step_2 }}</li>
         {% if recipe.step_3 %}
@@ -45,11 +54,20 @@
         {% if recipe.step_8 %}
         <li> {{ recipe.step_8 }}</li>
         {% endif %}
+        {% if recipe.step_9 %}
+        <li> {{ recipe.step_9 }}</li>
+        {% endif %}
+        {% if recipe.step_10 %}
+        <li> {{ recipe.step_10 }}</li>
+        {% endif %}
+        {% if recipe.step_11 %}
+        <li> {{ recipe.step_11 }}</li>
+        {% endif %}
     </ol>
     </div>
     <div class="form-group">
         <label class="extras">Other info</label>
-        <ul>
+        <ul class="unordered" style="list-style-type: none;">
             <li>Prep Time: {{ recipe.prep_time }}</li>
             {% if recipe.cook_time %}
             <li>Cook Time: {{ recipe.cook_time }}</li>
