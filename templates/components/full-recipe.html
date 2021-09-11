@@ -1,89 +1,64 @@
-
-<div  id="modal{{recipe._id}}" tabindex="-1" aria-labelledby="fullrecipe-modal-title"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- Recipe name-->
-                <h4 class="modal-title main-font modal-header-text" id="fullrecipe-modal-title">{{ recipe.recipe_name }}</h4>
-                <!-- Button to close the full-recipe-modal -->
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Recipe image -->
-                <div>
-                    <img id="fullrecipe-modal-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
-                </div>
-                <hr>
-                <div class="main-font modal-body-text">
-                    <h5 class="main-font modal-body-text">Ingredients</h5>
-                    <!-- Ingredients section. If statement to check if there is a value and if not it will ignore.
-                     Ingredients_1/_2 require an input when adding a recipe so an if statement is not required for
-                     these inputs as there will always be a value -->
-                    <ul>
-                        <li>{{ recipe.ingredients_1 }}</li>
-                        <li>{{ recipe.ingredients_2 }}</li>
-                        {% if recipe.ingredients_3 %}
-                        <li>{{ recipe.ingredients_3 }}</li>
-                        {% endif %}
-                        {% if recipe.ingredients_4 %}
-                        <li>{{ recipe.ingredients_4 }}</li>
-                        {% endif %}
-                        {% if recipe.ingredients_5 %}
-                        <li>{{ recipe.ingredients_5 }}</li>
-                        {% endif %}
-                        {% if recipe.ingredients_6 %}
-                        <li>{{ recipe.ingredients_6 }}</li>
-                        {% endif %}
-                        {% if recipe.ingredients_7 %}
-                        <li>{{ recipe.ingredients_7 }}</li>
-                        {% endif %}
-                        {% if recipe.ingredients_8 %}
-                        <li>{{ recipe.ingredients_8 }}</li>
-                        {% endif %}
-                    </ul>
-                </div>
-                <hr>
-                <div class="main-font modal-body-text">
-                    <h5 class="main-font colour modal-body-text">Directions</h5>
-                    <!-- Directions section. If statement to check if there is a value and if not it will ignore.
-                     directions_1/_2 require an input when adding a recipe so an if statement is not required for
-                     these inputs as there will always be a value -->
-                    <ol>
-                        <li> {{ recipe.step_1 }}</li>
-                        <li> {{ recipe.step_2 }}</li>
-                        {% if recipe.step_3 %}
-                        <li> {{ recipe.step_3 }}</li>
-                        {% endif %}
-                        {% if recipe.step_4 %}
-                        <li> {{ recipe.step_4 }}</li>
-                        {% endif %}
-                        {% if recipe.step_5 %}
-                        <li> {{ recipe.step_5 }}</li>
-                        {% endif %}
-                        {% if recipe.step_6 %}
-                        <li> {{ recipe.step_6 }}</li>
-                        {% endif %}step_7 %}
-                        <li> {{ recipe.step_7 }}</li>
-                        {% if recipe.step_8 %}
-                        <li> {{ recipe.step_8 }}</li>
-                        {% endif %}
-                    </ol>
-                </div>
-                <hr>
-                <div class="main-font modal-body-text">
-                    <!-- Additional recipe section. If statement to check if there is a value and if not it will ignore.
-                     Some require an input when adding a recipe so an if statement is not required for
-                     these inputs as there will always be a value -->
-                    <ul>
-                        <li>Prep Time: {{ recipe.prep_time }}</li>
-                        {% if recipe.cook_time %}
-                        <li>Cook Time: {{ recipe.cook_time }}</li>
-                        {% endif %}
-                        <li>Servings: {{ recipe.servings }}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<form>
+    <div class="form-group">
+      <label class="ingredients">Ingredients</label>
+      <ul>
+        <li>{{ recipe.ingredients_1 }}</li>
+        <li>{{ recipe.ingredients_2 }}</li>
+        {% if recipe.ingredients_3 %}
+        <li>{{ recipe.ingredients_3 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_4 %}
+        <li>{{ recipe.ingredients_4 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_5 %}
+        <li>{{ recipe.ingredients_5 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_6 %}
+        <li>{{ recipe.ingredients_6 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_7 %}
+        <li>{{ recipe.ingredients_7 }}</li>
+        {% endif %}
+        {% if recipe.ingredients_8 %}
+        <li>{{ recipe.ingredients_8 }}</li>
+        {% endif %}
+    </ul>
     </div>
-</div>
+    <div class="form-group">
+      <label class="directions">Directions</label>
+      <ol>
+        <li> {{ recipe.step_1 }}</li>
+        <li> {{ recipe.step_2 }}</li>
+        {% if recipe.step_3 %}
+        <li> {{ recipe.step_3 }}</li>
+        {% endif %}
+        {% if recipe.step_4 %}
+        <li> {{ recipe.step_4 }}</li>
+        {% endif %}
+        {% if recipe.step_5 %}
+        <li> {{ recipe.step_5 }}</li>
+        {% endif %}
+        {% if recipe.step_6 %}
+        <li> {{ recipe.step_6 }}</li>
+        {% endif %}
+        <li> {{ recipe.step_7 }}</li>
+        {% if recipe.step_8 %}
+        <li> {{ recipe.step_8 }}</li>
+        {% endif %}
+    </ol>
+    </div>
+    <div class="form-group">
+        <label class="extras">Other info</label>
+        <ul>
+            <li>Prep Time: {{ recipe.prep_time }}</li>
+            {% if recipe.cook_time %}
+            <li>Cook Time: {{ recipe.cook_time }}</li>
+            {% endif %}
+            <li>Total Time: {{ recipe.total_time }}</li>
+            <li>Servings: {{ recipe.servings }}</li>
+            {% if recipe.cooking_temperature %}
+            <li>Cooking Temperature: {{ recipe.cooking_temperature }}</li>
+            {% endif %}
+        </ul>
+      </div>
+  </form>
