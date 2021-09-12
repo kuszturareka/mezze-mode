@@ -5231,6 +5231,7 @@ textarea.form-control-lg {
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
+  text-align: center;
 }
 
 .modal-body {
@@ -5369,6 +5370,7 @@ textarea.form-control-lg {
     overflow-y: auto;
   }
 }
+
 .tooltip {
   position: absolute;
   z-index: 1080;

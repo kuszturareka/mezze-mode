@@ -1,6 +1,4 @@
-{% block modal %}
-<div class="modal fade colour" id="modal{{recipe._id}}" tabindex="-1" aria-labelledby="fullrecipe"
-    aria-hidden="true">
+<div class="modal fade colour" id="modal{{recipe._id}}" tabindex="-1" aria-labelledby="fullrecipe" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -12,14 +10,15 @@
             <div class="modal-body">
                 <!-- Image -->
                 <div>
-                    <img class="img-fluid" id="fullrecipe-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                    <img class="img-fluid" id="fullrecipe-img" src="{{ recipe.image_url }}"
+                        alt="{{ recipe.recipe_name }}">
                 </div>
                 <hr>
                 <div class="main-font modal-body-text">
                     <h5 class="main-font modal-body-text">Ingredients</h5>
                     <!-- Ingredient list with if statements. First two ingredients require input, while the others will be ignored if there
                     is no info-->
-                    <ul>
+                    <ul style="list-style-type:none">
                         <li>{{ recipe.ingredients_1 }}</li>
                         <li>{{ recipe.ingredients_2 }}</li>
                         {% if recipe.ingredients_3 %}
@@ -46,41 +45,39 @@
                 <div class="main-font modal-body-text">
                     <h5 class="main-font colour modal-body-text">Directions</h5>
                     <!-- Directions list. First two require input. -->
-                     <ol>
-                      <li> {{ recipe.step_1 }}</li>
-                      <li> {{ recipe.step_2 }}</li>
-                      {% if recipe.step_3 %}
-                      <li> {{ recipe.step_3 }}</li>
-                      {% endif %}
-                      {% if recipe.step_4 %}
-                      <li> {{ recipe.step_4 }}</li>
-                      {% endif %}
-                      {% if recipe.step_5 %}
-                      <li> {{ recipe.step_5 }}</li>
-                      {% endif %}
-                      {% if recipe.step_6 %}
-                      <li> {{ recipe.step_6 }}</li>
-                      {% endif %}
-                      <li> {{ recipe.step_7 }}</li>
-                      {% if recipe.step_8 %}
-                      <li> {{ recipe.step_8 }}</li>
-                      {% endif %}
-                  </ol>
+                    <ol>
+                        <li> {{ recipe.step_1 }}</li>
+                        <li> {{ recipe.step_2 }}</li>
+                        {% if recipe.step_3 %}
+                        <li> {{ recipe.step_3 }}</li>
+                        {% endif %}
+                        {% if recipe.step_4 %}
+                        <li> {{ recipe.step_4 }}</li>
+                        {% endif %}
+                        {% if recipe.step_5 %}
+                        <li> {{ recipe.step_5 }}</li>
+                        {% endif %}
+                        {% if recipe.step_6 %}
+                        <li> {{ recipe.step_6 }}</li>
+                        {% endif %}
+                        <li> {{ recipe.step_7 }}</li>
+                        {% if recipe.step_8 %}
+                        <li> {{ recipe.step_8 }}</li>
+                        {% endif %}
+                    </ol>
                 </div>
                 <hr>
                 <div class="main-font modal-body-text">
                     <!-- Additional info. -->
-                     <ul>
-                      <li>Prep Time: {{ recipe.prep_time }}</li>
-                      {% if recipe.cook_time %}
-                      <li>Cook Time: {{ recipe.cook_time }}</li>
-                      {% endif %}
-                      <li>Servings: {{ recipe.servings }}</li>
-                  </ul>
+                    <ul style="list-style-type:none">
+                        <li>Prep Time: {{ recipe.prep_time }}</li>
+                        {% if recipe.cook_time %}
+                        <li>Cook Time: {{ recipe.cook_time }}</li>
+                        {% endif %}
+                        <li>Servings: {{ recipe.servings }}</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
-

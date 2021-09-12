@@ -1,6 +1,6 @@
 {% block content %}
 {% endblock %}
-<div id="confirm-delete" tabindex="-1"aria-hidden="true">
+<div id="confirm-delete" tabindex="-1" aria-hidden="true">
     <div>
         <div class="content">
             <div class="body main-font">
@@ -10,7 +10,7 @@
             <!-- Button will delete record from MongoDB-->
             <div id="confirm-delete-div">
                 <a href="{{ url_for('delete', recipe_id=users_recipe._id) }}" type="submit"
-                    class="btn shadow-effect main-font" id="confirm-delete-button" >Delete</a>
+                    class="btn shadow-effect main-font" id="confirm-delete-button">Delete</a>
             </div>
         </div>
     </div>

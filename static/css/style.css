@@ -1,5 +1,5 @@
 .main-font {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .container {
@@ -29,7 +29,7 @@
   color: #2f2f2f;
   font-size: 1rem;
   padding: 1rem 0;
-  font: Roboto;
+  font-family: "Roboto";
 }
 
 .card h5 {
@@ -54,14 +54,14 @@
 
 .recipe-btn-div {
   text-align: center;
-  font: Roboto;
+  font-family: "Roboto";
   margin-bottom: 20px;
   border-radius: 15px;
 }
 
 .recipe-btn-div .btn {
   height: 40px;
-  font: Roboto;
+  font-family: "Roboto";
   padding: 10px;
   margin: auto 0;
   border-radius: 20px;
@@ -75,7 +75,7 @@
   margin-top: -75px;
   margin-bottom: 20px;
   color: #2f2f2f;
-  font: Roboto;
+  font-family: "Roboto";
   padding-top: 5px;
 }
 
@@ -84,7 +84,7 @@
   margin-top: -25px;
   margin-bottom: 20px;
   color: #2f2f2f;
-  font: Roboto;
+  font-family: "Roboto";
   padding-top: 5px;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .recipe-body {
-  font: Roboto, sans serif;
+  font-family: "Roboto";
   color: #2f2f2f;
   text-align: center;
 }
@@ -106,7 +106,7 @@
   background-color: white;
   color: #2f2f2f;
   border-radius: 5px;
-  font: Roboto;
+  font-family: "Roboto";
   margin: 10px;
   text-align: center;
 }
@@ -123,7 +123,7 @@
 }
 
 .form-group {
-  font: Roboto;
+  font-family: "Roboto";
   font-size: 15px;
   color: #2f2f2f;
 }
@@ -177,14 +177,11 @@
   margin: 5px;
   text-align: center;
   border-radius: 5px;
-  font: Roboto;
+  font-family: "Roboto";
 }
 
-.btn .btn-success {
-  font-size:
-}
 #confirm-delete-body {
-  font: Roboto;
+  font-family: "Roboto";
   text-align: center;
   font-size: 15px;
 }
@@ -195,9 +192,7 @@
 
 #btn {
   border-radius: 15px;
-  size: 20px;
   background-color: #e8e8e8;
-  
 }
 
 .alert-success,
@@ -220,10 +215,9 @@
   color: #2f2f2f;
 }
 
-
 #fullrecipe-img {
   width: 100%;
-  height: 50%;
+  height: 15rem;
   object-fit: cover;
 }
 
@@ -237,80 +231,38 @@
   height: 100%;
   outline: 0;
   background-color: transparent;
-  word-break: break-all;
+  text-align: center;
 }
 
 .modal-header {
+  text-align: center;
   font-weight: 700;
   color: #2f2f2f;
-  white-space: nowrap;
 }
 
 .modal-body {
   text-align: center;
   color: #2f2f2f;
-  white-space: nowrap;
 }
 
-.modal-body-text {
-  white-space: nowrap;
-  word-break: break-all;
-}
-
-.modal-content {
-  white-space: nowrap;
-}
-
-#modal-list {
-  white-space: no wrap!important;
-  word-break: break-all!important;
+.modal.show {
+  padding-right: 0 !important;
 }
 
 @media (min-width: 576px) {
-  #fullrecipe-img {
-      width= 100%;
-      height=auto;
+  .modal-body{
+    position: relative;
   }
 }
 
 @media (min-width: 625px) {
-  #fullrecipe-img {
-    width= 100%;
-    height=auto
+  #fullrecipe-modal-img {
+      height: 40vw;
   }
 }
 
 @media (min-width: 768px) {
-  #fullrecipe-img {
-    width= 100%;
-    height=auto
-  }
-}
-
-@media (min-width: 992px) {
-  #fullrecipe-img {
-    width= 100%;
-    height=auto
-  }
-}
-
-@media (min-width: 1100px) {
   #fullrecipe-modal-img {
-    width= 100%;
-    height=auto
-  }
-}
-
-@media (min-width: 1200px) {
-  #fullrecipe-img {
-    width= 100%;
-    height=auto
-  }
-}
-
-@media (min-width: 1500px) {
-  #fullrecipe-img {
-    width= 100%;
-    height=auto
+      height: 30vw;
   }
 }

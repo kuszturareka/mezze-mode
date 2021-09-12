@@ -1,14 +1,14 @@
 # MezzeMode
 ![mockup](static/assets/img/mockup.png)
 
-For my third milestone project, I have decided to create a cooking website. To break it down a little bit, the site contains recipes from the well know Mediterranean diet. 
+For my third milestone project, I have decided to create a cooking website. The site contains recipes from the well know Mediterranean diet. 
 
 This diet incorporates the traditional healthy living habits of people from countries bordering the Mediterranean Sea.
 
 Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seeds, herbs and spices, are the foundation of this particular diet and olive oil is the main source of added fat. Fish, seafood, dairy and poultry are also included, but in moderation. 
 
 ### Table of contents 
-* [UX (User Experience)](#ux--user-experience-)
+* [UX (User Experience)](#ux--user-experience)
     + [User Stories](#user-stories)
     + [User Goals](#user-goals)
 * [Design](#design) 
@@ -65,6 +65,14 @@ For this particular project, I chose to go with a shade of Hunter Green and Papa
 The font I have used throughout my website is Roboto, with Sans Serif as a fallback.
 
 ## Wireframes
+[Home Wireframe](static/wireframes/home.pdf)
+
+[Login Wireframe](static/wireframes/login.pdf)
+
+
+[Register Wireframes](static/wireframes/register.pdf)
+
+[Add Recipe Wireframe](static.wireframes/add-recipe.pdf)
 
 
 ## Features
@@ -86,8 +94,6 @@ User Data
 Recipe Data
 
 ![recipes](static/assets/img/recipe.jpg)
-## Admin credentials
-
 
 
 ## Technologies Used 
@@ -231,7 +237,7 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 ### Code
 
 * Code snippets were taken from Bootstrap and MDB for the creation of the cards, login and registration forms. 
-* Credit for code also goes to my mentor, Richard Wells, who helped me enormously with the project and whose Milestone Project 3 was an inspiration. 
+* Credit for code also goes to my mentor, Richard Wells, who helped me enormously with the project.
 * The structure of the website was created using the Clean Blog theme.  
 
 ### Content
