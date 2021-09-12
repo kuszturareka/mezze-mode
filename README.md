@@ -19,22 +19,21 @@ Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seed
    + [Existing Features](#existing-features)
    + [Future Features](#future-features) 
 * [Information Architecture](#information-architecture)
-* [Admin Credentials](#admin-credentials)
 * [Technologies Used](#technologies-used)
    + [Languages Used](#languages-used)
    + [Frameworks](#frameworks)
 * [Testing](#testing)
-    + [User Stories Testing]()
-    + [Further Testing]()
+    + [User Stories Testing](#user-stories-testing)
+    + [Further Testing](#further-testing)
 * [Bugs](#bugs)
 * [Unsolved Bugs]()
 * [Deployment](#deployment)
     + [Instructions](#instructions)
     + [Heroku Deployment](#deployment)
 * [Credits](#credits)
-    + [Content]()
-    + [Media]()
-    + [Aknowledgements]()
+    + [Content](#content)
+    + [Media](#media)
+    + [Aknowledgements](#aknowledgements)
 
 ## UX
 
@@ -83,6 +82,13 @@ The font I have used throughout my website is Roboto, with Sans Serif as a fallb
 ## Features
 
 ### Existing features
+
+* Home page with logo and navbar, background image, recipes injected from MongoDB database and social media icons. 
+* Separate page with login form that allows user to log into their profile and add, modify and delete recipes. The Sign In button cross checks with MongoDB and verifies if the user and password already exist. In case they do, a flashed message pops up. 
+* Separate page for registration form. It allows the user to enter a username and a password and sends all data to MongoDB database. The users get access to their profile. If the username already exists, a flashed message will pop up. 
+* Separate profile page. The user has the possibility of viewining, modifying and deleting personal recipes. 
+* Separate page for adding a recipe. It contains information like recipe name, instructions, steps, prepping and cooking time and also a button to add the recipe, which sends the information to MongoDB. 
+
 
 ### Future features
 * Adding the possibility of resetting the password.

@@ -18,12 +18,18 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    """
+    User is taken to index.html
+    """
     recipes = mongo.db.recipes.find()
     return render_template("index.html", recipes=recipes)
 
 
 @app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
+    """
+    The user has the possibility of adding recipes.
+    """
     if request.method == "POST":
         get_recipe = request.form.get
         recipe = {
@@ -59,7 +65,9 @@ def addrecipe():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
+    """
+    Allows user to log in
+    """
     if request.method == "POST":
         user = mongo.db.users
         current_user = user.find_one(
@@ -88,7 +96,10 @@ def logout():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
+    """
+    Allows user to create account. Cross checks if the username exists in
+    Mongo. User is redirected to index.html
+    """
     if request.method == "POST":
         user = mongo.db.users
         username = request.form.get("username")
@@ -129,7 +140,9 @@ def register():
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
-
+    """
+    User can access profile page.
+    """
     user = mongo.db.users
     recipes = list(mongo.db.recipes.find())
     username = user.find_one({"username": session["username"]})['username']
@@ -147,7 +160,9 @@ def profile():
 
 @app.route("/update<recipe_id>", methods=["GET", "POST"])
 def update_recipe(recipe_id):
-
+    """
+    User is allowed to update recipes
+    """
     if request.method == "POST":
         get_recipe = request.form.get
         new_update = {
@@ -186,9 +201,9 @@ def update_recipe(recipe_id):
 @app.route("/delete/<recipe_id>")
 def delete(recipe_id):
     """
-    Allows user to delete recipes. The selected recipe is captured by it's id
-    and the deleted. The user is then returned to the homepage and flashed a
-    message to let them know the recipe has been successfully deleted"
+    The user is allowed to delete recipes through MongoDB ID. The user also
+    get a message saying that the recipe was succesfully deleted after being
+    redirected to the home page.
     """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Your recipe has been succesfully deleted!")
@@ -198,7 +213,7 @@ def delete(recipe_id):
 @app.errorhandler(404)
 def page_not_available(e):
     """
-    If a 404 error occurs, the user is directed to a custom 404 page.
+    If a 404 error occurs, the user is redirected to a custom 404 page.
     """
     return render_template("404.html")
 
@@ -206,7 +221,7 @@ def page_not_available(e):
 @app.errorhandler(500)
 def server_error(e):
     """
-    If a 500 error occurs, the user is directed to a custom 500 page.
+    If a 500 error occurs, the user is redirected to a custom 500 page.
     """
     return render_template("500.html")
 
@@ -215,4 +230,4 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=True)
+        debug=False)
