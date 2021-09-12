@@ -263,15 +263,3 @@
     position: relative;
   }
 }
-
-@media (min-width: 625px) {
-  #fullrecipe-modal-img {
-      height: 40vw;
-  }
-}
-
-@media (min-width: 768px) {
-  #fullrecipe-modal-img {
-      height: 30vw;
-  }
-}
