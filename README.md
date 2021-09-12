@@ -39,7 +39,12 @@ Plant-based foods, such as whole grains, vegetables, legumes, fruits, nuts, seed
 ## UX
 
 ### User Stories
-1. 
+* As a user, I would like to use thr website when cooking.
+* As a user, I would like to see pictures of the recipes.
+* As a user, I would like to be able to know which ingredients are used in a recipe.
+* As a user, I would like to see detailed instructions, including cooking and prepping time. 
+* As a user, I would like to see a variety of recipes. 
+
 ### User Goals
 As a user, I would like to :
 * easily find recipes of my liking 
@@ -162,9 +167,14 @@ Solved with:
 2. Missmatch in Heroku, the website was not functional. Fixed by reinstalling the requirements.txt file.
 
 3. Registration form not importing username and password to MongoDB. Fixed by adding the proper POST method to the form. 
-## Unsolved bugs
 
-* Register account form that overlaps with the hero image in mobile view and sometimes in tablet view.
+4. Register account form that overlaps with the hero image in mobile view and sometimes in tablet view. Fixed by modifying padding. 
+
+## Unsolved bugs
+1. Full recipe modal not entirely responsive in mobile view. Overwritten CSS file on imported CSS file. Initially, the whole content was pushed to the left and nothing was visible. I partially fixed this, but the modal has a horizontal scroll. 
+
+2. Modal/flashed messages backdrop lagging.  
+
 ## Deployment
 
 ### Instructions
@@ -250,4 +260,3 @@ To deploy your website to Heroku, you should follow the instructions set out bel
 I received inspiration for this project from the Love Sandwiches Project featured at the end of the Python Essentials Module and The Mini Project featured at the end of the Backend Development Module. 
 
 Inpiration for the README.md came from the Markdown Tutorial, Code Institute Solutions/Anna Greaves.
-
